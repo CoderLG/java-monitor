@@ -1,0 +1,151 @@
+spring:
+  profiles:
+    active: dev
+
+#server:
+#  port: 8230
+#
+#spring:
+#  application:
+#    name: tiltphoto
+#    version: V0.1.1.2_2019
+#  rabbitmq:
+#    host: ${rabbitmq_host}
+#    port: ${rabbitmq_port}
+#    username: ${rabbitmq_username}
+#    password: ${rabbitmq_password}
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://${pg_host}:${pg_port}/gv_tp
+#    username: ${pg_username}
+#    password: ${pg_password}
+#    druid:
+#      #2.连接池配置
+#      #初始化连接池的连接数量 大小，最小，最大
+#      initial-size: 50
+#      min-idle: 50
+#      max-active: 200
+#      #配置获取连接等待超时的时间
+#      max-wait: 60000
+#      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+#      time-between-eviction-runs-millis: 60000
+#      # 配置一个连接在池中最小生存的时间，单位是毫秒
+#      min-evictable-idle-time-millis: 30000
+#      validation-query: SELECT 1
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      # 是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+#      pool-prepared-statements: true
+#      max-pool-prepared-statement-per-connection-size: 20
+#      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+#      filter:
+#        stat:
+#          merge-sql: true
+#          slow-sql-millis: 5000
+#      #3.基础监控配置
+#      web-stat-filter:
+#        enabled: true
+#        url-pattern: /*
+#        #设置不统计哪些URL
+#        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+#        session-stat-enable: true
+#        session-stat-max-count: 100
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: /druid/*
+#        reset-enable: true
+#        #设置监控页面的登录名和密码
+#        login-username: admin
+#        login-password: admin
+#        #allow: 127.0.0.1
+#        #deny: 192.168.1.100
+#    #      filter:
+#    #        wall:
+#    #          enabled: false
+#    #        slf4j:
+#    #          enabled: true
+#    #          result-set-log-enabled: false
+#    #          connection-log-enabled: false
+#    #          statement-parameter-clear-log-enable: false
+#    #          statement-create-after-log-enabled: false
+#    #          statement-close-after-log-enabled: false
+#    #      #初始化大小
+#    #      initialSize: 5
+#    #      #最小值
+#    #      minIdle: 5
+#    #      #最大值
+#    #      maxActive: 200
+#    #      #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+#    #      maxWait: 60000
+#    #      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+#    #      timeBetweenEvictionRunsMillis: 60000
+#    #      #配置一个连接在池中最小生存的时间
+#    #      minEvictableIdleTimeMillis: 300000
+#    #      validationQuery: SELECT 1
+#    #      testWhileIdle: true
+#    ##      testOnBorrow: false
+#    ##      testOnReturn: false
+#    #      poolPreparedStatements: true
+#    #      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，
+#    #      #'wall'用于防火墙，SpringBoot中没有log4j，我改成了log4j2
+#    #      filters: stat,wall,log4j2
+#    #      #最大PSCache连接
+#    #      maxPoolPreparedStatementPerConnectionSize: 20
+#    #      useGlobalDataSourceStat: true
+#    #      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+#    #      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    #      # 配置StatFilter
+#    #      web-stat-filter:
+#    #        #默认为false，设置为true启动
+#    #        enabled: true
+#    #        url-pattern: "/*"
+#    #        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+#    #      #配置StatViewServlet
+#    #      stat-view-servlet:
+#    #        url-pattern: "/druid/*"
+#    #        #允许那些ip
+#    #        allow: 127.0.0.1
+#    #        login-username: admin
+#    #        login-password: 123456
+#    #        #禁止那些ip
+#    ##        deny: 192.168.1.102
+#    #        #是否可以重置
+#    #        reset-enable: true
+#    #        #启用
+#    #        enabled: true
+#    data:  classpath*:datamanager_init.sql
+#    initialization-mode: always
+#  jpa:
+#    show-sql:
+#      true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#
+#
+#
+#
+#auth:
+#  serviceId: auth
+#  user:
+#    token-header: Authorization
+#  client:
+#    token-header: x-client-token
+#    id: tiltphoto
+#    secret: 123456
+#
+#swagger:
+#  enabled: true
+#  title: 二次开发文档
+#  version: ${spring.application.version}
+#  description: 可用接口,供二次开发使用
+#  contact:
+#    name: im.lg@qq.com
+#  exclude-path: /error,/actuator/**
+#  authorization:
+#    name: 认证头
+#    key-name: Authorization
